@@ -17,8 +17,24 @@ class PinsController < ApplicationController
     @pin = Pin.new
   end
 
+  def edit
+    @pin = Pin.find(params[:id])
+  end
+
+  def update
+    @pin = Pin.find(params[:id])
+ 
+  if @pin.update(pin_params)
+    redirect_to pin_path(@pin)
+  else
+    @errors = @pin.errors
+    render :edit
+    # redirect_to edit_pin_path(@pin)
+    end
+  end
+
   def create
-  @pin = Pin.create(pin_params)
+    @pin = Pin.create(pin_params)
  
   if @pin.valid?
     @pin.save
@@ -29,10 +45,10 @@ class PinsController < ApplicationController
     end
   end
     
-private
+  private
  
   def pin_params
-    params.require(:pin).permit(:title, :url, :slug, :text, :category_id)
+    params.require(:pin).permit(:title, :url, :slug, :text, :category_id, :image)
   end
 
 end

@@ -9,6 +9,7 @@
   <p><%= "#{@pin.text}" %></p>
 
   <hr/>
+  <img src="<%= @pin.image.url(:medium) %>">
   <p>
     <b>Visit <%= "#{@pin.title}" %> at: </b>
     <a class="url" href="<%= "#{@pin.url}" %>" target="_blank">
