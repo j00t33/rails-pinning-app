@@ -1,12 +1,8 @@
-<% if !@errors.nil? %>
-  <div class="error alert alert-danger">
-    <label><%= pluralize(@errors.count, "error") %> prohibited this pin from being saved:</label>
-    <ul>
-      <% @errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="header">
+  <h1>
+    <i class="fa fa-laptop"></i>
+    Let's create a new pin
+  </h1>
+</div>
 
 <%= render "form" %>
