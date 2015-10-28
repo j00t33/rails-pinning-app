@@ -77,17 +77,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
+  # heroku config:set S3_BUCKET_NAME=skillcrush-rails
+  # heroku config:set AWS_ACCESS_KEY_ID=AKIAI4Y7CIUPPOFAYN2Q
+  # heroku config:set AWS_SECRET_ACCESS_KEY=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
 
-  heroku config:set S3_BUCKET_NAME=skillcrush-rails
-  heroku config:set AWS_ACCESS_KEY_ID=AKIAI4Y7CIUPPOFAYN2Q
-  heroku config:set AWS_SECRET_ACCESS_KEY=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
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_credentials => {
+  #   :bucket => ENV['skillcrush'],
+  #   :access_key_id => ENV['AKIAI4Y7CIUPPOFAYN2Q'],
+  #   :secret_access_key => ENV['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']
+  #   }
+  # }
 
 end

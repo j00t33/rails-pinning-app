@@ -19,14 +19,14 @@ RSpec.describe PinsController do
 		end
 	end
 
-	describe "GET edit" do
-		it "renders the edit pin template" do
-			get "#{:id}"
-			expect(response).to render_template("edit")
-		end
+	# describe "GET edit" do
+	# 	it "renders the edit pin template" do
+	# 		get "#{:id}"
+	# 		expect(response).to render_template("edit")
+	# 	end
 
-		# it "assigns @pin to the Pin with appropriate id" do
-		# 	expect(assigns[:])
-		# end
-	end
+	# 	# it "assigns @pin to the Pin with appropriate id" do
+	# 	# 	expect(assigns[:])
+	# 	# end
+	# end
 end
