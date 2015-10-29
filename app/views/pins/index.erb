@@ -4,14 +4,14 @@
 </div>
 <hr/>
 <div class="pins">
-  <% @pins.reverse.each_slice(3) do |row| %>
+  <% @pins.each_slice(3) do |row| %>
     <div class="row">
       <% row.each do |pin| %>      
         <div class="pin-container col-md-4">
           <div class="pin">
 
             <div class="logo-thumbnail col-xs-3">
-              <% if pin.image.url(:thumb) %>
+              <% if pin.image.exists? %>
                 <img src="<%= pin.image.url(:thumb) %>">
               <% else %>
                 <% if "#{pin.category.name}" == "rails" %>
@@ -30,6 +30,10 @@
             </div>
 
             <hr/>
+            <%= link_to repin_path(pin), class: "btn btn-default repin", method: "post" do %>
+              <i class="fa fa-thumb-tack"></i>
+              Repin!
+            <% end %>
             <img src="<%= pin.image.url(:medium) %>">
             <p class="text"><%= "#{pin.text}" %></p>
           </div>

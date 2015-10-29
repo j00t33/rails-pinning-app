@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   delete 'logout/:id' => "users#logout", as: :logout
 
+  post "pins/repin/:id" => "pins#repin", as: 'repin'
+
   root 'pins#index'
 
   get '/library' => 'pins#index'

@@ -7,7 +7,12 @@
 
 <div class="show-pin">
   <p><%= "#{@pin.text}" %></p>
-
+  <p>
+    This pin has been pinned by
+    <% @users.each do |user| %>
+      <%= link_to user.first_name.capitalize, user_path(user), target: "_blank" %>
+    <% end %>
+  </p>
   <hr/>
   <img src="<%= @pin.image.url(:medium) %>">
   <p>
@@ -16,6 +21,10 @@
       <%= "#{@pin.url}" %>
     </a>
   </p>
+  <%= link_to repin_path(@pin), class: "btn btn-default", method: "post" do %>
+    <i class="fa fa-thumb-tack"></i>
+    Repin!
+  <% end %>
 </div>
 <br/>
 <a href="/">

@@ -78,3 +78,21 @@ hr{
   width: 100%;
   padding: 10px;
 }
+
+.repin {
+  position: absolute;
+  width: 100px;
+  margin-left: 105px;
+  margin-top: 20px;
+  background: #dd5566;
+  border: 1px solid #da5263;
+  border-radius: 4px;
+  opacity: 0.9;
+  
+  &:hover {
+    background: #dd5566;
+    opacity: 1;
+    border: 1px solid #da5263;
+  }
+}
+
